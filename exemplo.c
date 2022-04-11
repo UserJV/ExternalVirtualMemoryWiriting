@@ -60,7 +60,7 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
-    short temp[3] = {L'L, L'S', 0};
+    short temp[3] = {L'L', L'S', 0};
     if (FALSE == WriteProcessMemory(handle, (LPVOID)(base_address + 0x35CF0), temp, 6, NULL)) {
         fprintf(stderr, "Cold not write memory (%d)\n", GetLastError());
         return EXIT_FAILURE;
