@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     }
 
     DWORD old;
-    if (FALSE == VirtualProtectExe(handle, (LPVOID)(base_address + 0x35CF0), 1024, PAGE_READWRITE, &old)) {
+    if (FALSE == VirtualProtectEx(handle, (LPVOID)(base_address + 0x35CF0), 1024, PAGE_READWRITE, &old)) {
         fprintf(stderr, "Cold not modify memory protection (%d)\n", GetLastError());
         return EXIT_FAILURE;
     }
